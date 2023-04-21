@@ -1,0 +1,64 @@
+<style>
+	table {
+	  font-family: arial, sans-serif;
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+	
+	td, th {
+	  border: 1px solid #dddddd;
+	  text-align: left;
+	  padding: 8px;
+	}
+	
+	tr:nth-child(even) {
+	  background-color: #dddddd;
+	}
+	</style>
+	
+	<div class="container" >
+	  <div class="col-md-12 border-">
+		<table>
+		  <thead>
+			<tr>
+			  <th>Order_No</th>
+			  <!-- <th>Station Name</th> -->
+			  <!-- <th>Address</th> -->
+			  <th>Latitude</th>
+			  <th>Longitude</th>
+			  <th>Pincode</th>
+			  <th>Timeslot</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			{% for random in random_list %}
+			<tr>
+			  <!-- <td>{{ random.num }} &nbsp;</td> -->
+			  <td> Shipment_ID = {{ random.shipment_id }}&nbsp;&nbsp;</td>
+			  <!-- <td>{{ random.address }} &nbsp; </td> -->
+			  <td>{{ random.latitude }} &nbsp;</td>
+			  <td>{{ random.longitude }}&nbsp;</td>
+			  <td>{{ random.pincode }}</td>
+			  <td>{{ random.timeslot }}</td>
+			</tr>
+			{% endfor %}
+		  </tbody>
+		</table>
+	  </div>
+	</div> 
+
+
+
+{% block content %}
+
+    
+        {% csrf_token %}
+        
+		<div style="text-align: center;">
+            <a href="{% url 'create_trips' %}">
+              <button type="submit" class="btn btn-warning m-5" style="background-color: #FFC107; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px">Update</button>
+            </a>
+        </div>
+    
+
+{% endblock %} 

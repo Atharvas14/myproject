@@ -1,0 +1,49 @@
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<h1>
+    THIS IS YOUR OUTPUT
+</h1>
+
+<!-- output.html template -->
+<!-- output.html -->
+
+<table>
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Address</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Pincode</th>
+        <th>Timeslot</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for record in matching_records %}
+      <tr>
+        <td>{{ record.no }}</td>
+        <td>{{ record.address }}</td>
+        <td>{{ record.latitude }}</td>
+        <td>{{ record.longitude }}</td>
+        <td>{{ record.pincode }}</td>
+        <td>{{ record.timeslot }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  

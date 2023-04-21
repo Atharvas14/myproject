@@ -1,0 +1,28 @@
+<table>
+    <thead>
+      <tr>
+        <th>no </th>
+        <th>address</th>
+        <th>latitude</th>
+        <th>longitude</th>
+        <th>pincode</th>
+        <th>Timeslot</th>
+
+        <!-- Add more headers for each column in your CSV file -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+      <tr>
+        <td>{{ row.no }}</td>
+        <td>{{ row.address }}</td>
+        <td>{{ row.latitude }}&nbsp;</td>
+        <td>{{ row.longitude }}&nbsp;</td>
+        <td>{{ row.pincode }} &nbsp; </td>
+        <td>{{ row.timeslot }}</td>
+        <!-- Add more cells for each column in your CSV file -->
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
